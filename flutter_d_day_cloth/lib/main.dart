@@ -72,7 +72,11 @@ class HomeScreen extends StatelessWidget {
               childAspectRatio: 1/1,
             ),
           ),
-          SliverToBoxAdapter(child: Container(width: 500, height: 500,)),
+          SliverToBoxAdapter(
+            child: Container(
+              width: 500, height: 500
+            )
+          ),
         ],
       )
     );
