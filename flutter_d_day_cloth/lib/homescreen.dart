@@ -15,15 +15,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   CarouselController carouselController = CarouselController();
 
-  var carouselImgs = [
-    Image.asset('assets/images/go_home.png'),
-    Image.asset('assets/images/move.png'),
-    Image.asset('assets/images/quick_deli.png'),
-    Image.asset('assets/images/remodeling.png'),
-    Image.asset('assets/images/sale.png'),
-    Image.asset('assets/images/shopping.png'),
-    Image.asset('assets/images/today_deal.png'),
-  ];
+  // var carouselImgs = [
+  //   Image.asset('assets/images/go_home.png'),
+  //   Image.asset('assets/images/move.png'),
+  //   Image.asset('assets/images/quick_deli.png'),
+  //   Image.asset('assets/images/remodeling.png'),
+  //   Image.asset('assets/images/sale.png'),
+  //   Image.asset('assets/images/shopping.png'),
+  //   Image.asset('assets/images/today_deal.png'),
+  // ];
 
   var mainColor = Color(0xff205B48);
   var blackColor = Color(0xff1E1E1E);
@@ -106,18 +106,18 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             color:Colors.grey[300],
           ),
-          CarouselSlider(
-            carouselController: carouselController,
-            options: CarouselOptions(
-              autoPlay: true
-            ),
-            items: carouselBox.map((carouselImgs) {
-              return Container(
-                // padding: EdgeInsets.symmetric(horizontal: 7),
-                child: carouselImgs,
-              );
-            }).toList(),
-          ),
+          // CarouselSlider(
+          //   carouselController: carouselController,
+          //   options: CarouselOptions(
+          //     autoPlay: true
+          //   ),
+          //   items: carouselBox.map((carouselImgs) {
+          //     return Container(
+          //       // padding: EdgeInsets.symmetric(horizontal: 7),
+          //       child: carouselImgs,
+          //     );
+          //   }).toList(),
+          // ),
         ],
       ),
 
