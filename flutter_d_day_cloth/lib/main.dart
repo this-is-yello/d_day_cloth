@@ -4,9 +4,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_d_day_cloth/promotionscreen.dart';
 
-import 'package:flutter_d_day_cloth/homescreen.dart';
-import 'package:flutter_d_day_cloth/todownload.dart';
-
 void main() {
   runApp(MaterialApp(
     title: '바이각 슈트 렌탈센터',
