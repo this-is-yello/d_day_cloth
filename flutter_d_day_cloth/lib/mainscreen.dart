@@ -16,6 +16,12 @@ class _MainScreenState extends State<MainScreen> {
 
   CarouselController carouselController = CarouselController();
 
+  // myPageState() {
+  //   if() {
+
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -50,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
               child: Booking(),
             ),
             Center(
-              child: Mypage(),
+              child: AdminMypage(),
             )
           ],
         ),
@@ -407,22 +413,9 @@ class Search extends StatelessWidget {
 }
 
 
-// -------------------------------------- 예약내역 --------------------------------------------
-class Booking extends StatelessWidget {
-  const Booking({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text('예약이다.')),
-    );
-  }
-}
-
-
-// -------------------------------------- 마이페이지 --------------------------------------------
-class Mypage extends StatelessWidget {
-  const Mypage({super.key});
+// -------------------------------------- 유저_마이페이지 --------------------------------------------
+class UserMypage extends StatelessWidget {
+  const UserMypage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -565,6 +558,167 @@ class Mypage extends StatelessWidget {
     );
   }
 }
+
+
+// -------------------------------------- 관리자_마이페이지 --------------------------------------------
+class AdminMypage extends StatelessWidget {
+  const AdminMypage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Text('마이페이지', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+          ),
+          Container(
+            child: ListTile(
+              leading: Icon(Icons.photo, size: 50),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                  Text('010-1212-3535', style: TextStyle(color: Colors.grey))
+                ],
+              ),
+              trailing: IconButton(
+                icon: Icon(Icons.keyboard_arrow_right, size: 30),
+                onPressed: () {},
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Container(
+              width: double.infinity,
+              height: 70,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    blurRadius: 4,
+                    offset: Offset(0, 4), 
+                  )
+                ], 
+                color: Colors.white,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    child: Container(
+                      child: Center(
+                        child: Text('회원관리', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                      )
+                    ),
+                    onTap: () {
+                      // Navigator.push(context, MaterialPageRoute(
+                      //   builder: (context) => PromotionScreen()
+                      // ));
+                    },
+                  ),
+                  Container(
+                    height: 40,
+                    width: 2,
+                    color:Colors.grey[300],
+                  ),
+                  InkWell(
+                    child: Container(
+                      child: Center(
+                        child: Text('예약관리', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                      )
+                    ),
+                    onTap: () {
+                      // Navigator.push(context, MaterialPageRoute(
+                      //   builder: (context) => PromotionScreen()
+                      // ));
+                    },
+                  ),
+                  Container(
+                    height: 40,
+                    width: 2,
+                    color:Colors.grey[300],
+                  ),
+                  InkWell(
+                    child: Container(
+                      child: Center(
+                        child: Text('제품관리', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                      )
+                    ),
+                    onTap: () {
+                      // Navigator.push(context, MaterialPageRoute(
+                      //   builder: (context) => PromotionScreen()
+                      // ));
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+            child: InkWell(
+              child: Container(
+                height: 70,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 4,
+                      offset: Offset(0, 4), 
+                    )
+                  ], 
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.qr_code, size: 30,),
+                    Padding(padding: EdgeInsets.all(4)),
+                    Text('바코드로 제품검색', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                  ],
+                ),
+              ),
+              onTap: () {
+                // Navigator.push(context, MaterialPageRoute(
+                //   builder: (context) => PromotionScreen()
+                // ));
+              },
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Text('관리자 일정', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+            child: Container(
+              width: double.infinity,
+              height: 400,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    blurRadius: 4,
+                    offset: Offset(0, 4), 
+                  )
+                ], 
+                color: Colors.white,
+              ),
+              child: TableCalendarScreen(),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
 // -------------------------------------- 캘린더 --------------------------------------------
 class TableCalendarScreen extends StatelessWidget {
   const TableCalendarScreen({Key? key}) : super(key: key);
@@ -581,6 +735,66 @@ class TableCalendarScreen extends StatelessWidget {
           titleCentered: true,
           formatButtonVisible: false,
         ),
+      ),
+    );
+  }
+}
+
+
+// -------------------------------------- 예약내역 --------------------------------------------
+class Booking extends StatelessWidget {
+  const Booking({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Text('예약내역', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+          ),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Text('yyyy.mm.dd', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    blurRadius: 4,
+                    offset: Offset(0, 4), 
+                  )
+                ], 
+                color: Colors.white,
+              ),
+            child: Row(
+              children: [
+                Container(
+                  width: 70,
+                  height: 70,
+                  color: Colors.grey,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('[대여종류] 상품이름', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                    Text('yyyy.mm.dd - yyyy.mm.dd', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w700)),
+                    TextButton(
+                      child: Text('상세보기>'),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
