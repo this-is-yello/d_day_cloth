@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_d_day_cloth/mainscreen.dart';
+import 'package:flutter_d_day_cloth/webscreen.dart';
 import 'package:flutter_d_day_cloth/todownload.dart';
 
 class PromotionScreen extends StatelessWidget {
@@ -40,7 +40,7 @@ class WebMain extends StatelessWidget {
         children: [
           ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 420),
-            child: MainScreen()
+            child: WebScreen()
           ),
           Padding(padding: EdgeInsets.all(20)),
           ConstrainedBox(

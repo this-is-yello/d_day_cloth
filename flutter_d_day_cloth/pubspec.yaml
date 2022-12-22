@@ -33,6 +33,10 @@ dependencies:
     sdk: flutter
   carousel_slider: ^4.2.1
   table_calendar: ^3.0.8
+
+  flutter_localizations:
+    sdk: flutter
+  get: ^4.6.5
   intl: ^0.17.0
 
 

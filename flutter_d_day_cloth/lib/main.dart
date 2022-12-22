@@ -3,6 +3,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_d_day_cloth/promotionscreen.dart';
+import 'package:flutter_d_day_cloth/mypage/adminmypage.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,5 +20,13 @@ void main() {
       ),
     ),
     home: PromotionScreen(),
+    localizationsDelegates: [
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate
+    ],
+    supportedLocales: [
+      const Locale('en', 'US'),
+      const Locale('ko', 'KO'),
+    ],
   ));
 }
