@@ -65,7 +65,7 @@ class _WebScreenState extends State<WebScreen> {
               child: Booking(),
             ),
             Center(
-              child: AdminMypage(),
+              child: UserMypage(),
             )
           ],
         ),

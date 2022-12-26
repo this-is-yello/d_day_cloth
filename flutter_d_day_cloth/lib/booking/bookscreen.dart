@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_d_day_cloth/booking/bookdetail.dart';
+
 class Booking extends StatelessWidget {
   const Booking({super.key});
 
@@ -52,7 +54,9 @@ class Booking extends StatelessWidget {
                       Padding(padding: EdgeInsets.all(4)),
                       InkWell(
                         child: Text('상세보기>', style: TextStyle(color: Color(0xff082EB5), fontSize: 16, fontWeight: FontWeight.w700),),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBookDetail()));
+                        },
                       )
                     ],
                   ),
@@ -99,7 +103,9 @@ class Booking extends StatelessWidget {
                       Padding(padding: EdgeInsets.all(4)),
                       InkWell(
                         child: Text('상세보기>', style: TextStyle(color: Color(0xff082EB5), fontSize: 16, fontWeight: FontWeight.w700),),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBookDetail()));
+                        },
                       )
                     ],
                   ),

@@ -62,10 +62,19 @@ class WeddingRent extends StatelessWidget {
                   ],
                 ),
               ),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => ClickPeriodSet()
-                ));
+              onTap: () async{
+                await showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(
+                      child: Container(
+                        width: 380,
+                        height: 600,
+                        child: DatePick(),
+                      ),
+                    );
+                  }
+                );
               },
             ),
           ),

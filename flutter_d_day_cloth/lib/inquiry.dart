@@ -184,25 +184,25 @@ class InquiryScreen extends StatelessWidget {
             width: double.infinity,
             height: 2,
           ),
-          InkWell(
-            child: Container(
-              margin: EdgeInsets.only(left: 16, right: 16),
-              width: double.infinity,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    blurRadius: 4,
-                    offset: Offset(0, 4), 
-                  )
-                ], 
-              ),
-              child: Center(child: Text('전화상담 요청', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700))),
+          Container(
+            margin: EdgeInsets.only(left: 16, right: 16),
+            width: double.infinity,
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(6),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  blurRadius: 4,
+                  offset: Offset(0, 4), 
+                )
+              ], 
             ),
-            onTap: () {},
+            child: InkWell(
+              child: Center(child: Text('전화상담 요청', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700))),
+              onTap: () {},
+            ),
           ),
         ],
       ),
