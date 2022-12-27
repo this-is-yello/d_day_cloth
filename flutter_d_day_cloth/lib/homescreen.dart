@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_d_day_cloth/rent/meetingrent.dart';
 import 'package:flutter_d_day_cloth/rent/weddingrent.dart';
+import 'package:flutter_d_day_cloth/rent/product.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -95,43 +96,48 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.all(16),
           child: Text('인기상품', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
         ),
-        Column(
-          children: [
-            Container(
-              padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 80,
-                    height: 80,
-                    color: Colors.black,
-                  ),
-                  Container(
-                    width: 240,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('김주현바이각', style: TextStyle(fontSize: 14, color: Colors.grey)),
-                        Text('[면접대여] 블랙 솔리드 슈트', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-                        Text('50,000원', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))
-                      ],
+        InkWell(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      color: Colors.black,
                     ),
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.favorite_border),
-                    onPressed: () {},
-                  )
-                ],
-              )
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
-              height: 1,
-              width: double.infinity,
-              color:Colors.grey[300],
-            ),
-          ],
+                    Container(
+                      width: 240,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('김주현바이각', style: TextStyle(fontSize: 14, color: Colors.grey)),
+                          Text('[면접대여] 블랙 솔리드 슈트', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+                          Text('50,000원', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.favorite_border),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                height: 1,
+                width: double.infinity,
+                color:Colors.grey[300],
+              ),
+            ],
+          ),
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ClickProduct()));
+          },
         ),
       ],
     );

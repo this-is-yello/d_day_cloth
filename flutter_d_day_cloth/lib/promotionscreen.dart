@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_d_day_cloth/webscreen.dart';
+import 'package:flutter_d_day_cloth/tabbarview.dart';
 import 'package:flutter_d_day_cloth/todownload.dart';
+
 
 class PromotionScreen extends StatelessWidget {
   const PromotionScreen({super.key});
