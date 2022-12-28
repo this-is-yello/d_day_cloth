@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_d_day_cloth/mypage/calender.dart';
+import 'package:flutter_d_day_cloth/booking/bookscreen.dart';
+import 'package:flutter_d_day_cloth/mypage/mysize.dart';
+import 'package:flutter_d_day_cloth/mypage/mypoint.dart';
 
 class UserMypage extends StatelessWidget {
   const UserMypage({super.key});
@@ -12,7 +15,8 @@ class UserMypage extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(16),
-            child: Text('마이페이지', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+            child: Text('마이페이지',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
           ),
           Container(
             child: ListTile(
@@ -20,7 +24,9 @@ class UserMypage extends StatelessWidget {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                  Text('바이각',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                   Text('010-1212-3535', style: TextStyle(color: Colors.grey))
                 ],
               ),
@@ -41,9 +47,9 @@ class UserMypage extends StatelessWidget {
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
                     blurRadius: 4,
-                    offset: Offset(0, 4), 
+                    offset: Offset(0, 4),
                   )
-                ], 
+                ],
                 color: Colors.white,
               ),
               child: Row(
@@ -52,40 +58,48 @@ class UserMypage extends StatelessWidget {
                   InkWell(
                     child: Container(
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('내 포인트', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-                          Padding(padding: EdgeInsets.all(4)),
-                          Text('0 P', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-                        ]
-                      ),
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('내 포인트',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w700)),
+                            Padding(padding: EdgeInsets.all(4)),
+                            Text('0 P',
+                                style: TextStyle(
+                                    fontSize: 24, fontWeight: FontWeight.w700)),
+                          ]),
                     ),
                     onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(
-                      //   builder: (context) => PromotionScreen()
-                      // ));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ClickMyPoint()));
                     },
                   ),
                   Container(
                     height: 70,
                     width: 2,
-                    color:Colors.grey[300],
+                    color: Colors.grey[300],
                   ),
                   InkWell(
                     child: Container(
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('예약내역', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-                          Padding(padding: EdgeInsets.all(4)),
-                          Text('0건', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-                        ]
-                      ),
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('예약내역',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w700)),
+                            Padding(padding: EdgeInsets.all(4)),
+                            Text('0건',
+                                style: TextStyle(
+                                    fontSize: 24, fontWeight: FontWeight.w700)),
+                          ]),
                     ),
                     onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(
-                      //   builder: (context) => PromotionScreen()
-                      // ));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ClickBooking()));
                     },
                   ),
                 ],
@@ -103,23 +117,26 @@ class UserMypage extends StatelessWidget {
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
                       blurRadius: 4,
-                      offset: Offset(0, 4), 
+                      offset: Offset(0, 4),
                     )
-                  ], 
+                  ],
                   color: Colors.white,
                 ),
-                child: Center(child: Text('마이 사이즈', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))),
+                child: Center(
+                    child: Text('마이 사이즈',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.w700))),
               ),
               onTap: () {
-                // Navigator.push(context, MaterialPageRoute(
-                //   builder: (context) => PromotionScreen()
-                // ));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ClickMySize()));
               },
             ),
           ),
           Container(
             padding: EdgeInsets.all(16),
-            child: Text('내 대여 일정', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+            child: Text('내 대여 일정',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
@@ -132,9 +149,9 @@ class UserMypage extends StatelessWidget {
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
                     blurRadius: 4,
-                    offset: Offset(0, 4), 
+                    offset: Offset(0, 4),
                   )
-                ], 
+                ],
                 color: Colors.white,
               ),
               child: TableCalendarScreen(),

@@ -10,6 +10,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_d_day_cloth/mypage/givepoint.dart';
 import 'package:flutter_d_day_cloth/booking/bookmanegement.dart';
 import 'package:flutter_d_day_cloth/product/productmanegement.dart';
+import 'package:flutter_d_day_cloth/inquirymanegement.dart';
 
 void main() {
   runApp(MaterialApp(
