@@ -153,7 +153,155 @@ class BookMangement extends StatelessWidget {
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  showBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 4,
+                              offset: Offset(0, -4), 
+                            )
+                          ],
+                        ),
+                        child: CustomScrollView(
+                          slivers: [
+                            SliverAppBar(
+                              pinned: true,
+                              floating: true,
+                              automaticallyImplyLeading: false,
+                              elevation: 0,
+                              expandedHeight: 360,
+                              toolbarHeight: 360,
+                              backgroundColor: Colors.white,
+                              titleTextStyle: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700),
+                              shape: ContinuousRectangleBorder(
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))
+                              ),
+                              title: Container(
+                                padding: EdgeInsets.only(left: 16, right: 16),
+                                child: Column(
+                                  children: [
+                                    IconButton(
+                                      icon: Icon(Icons.keyboard_double_arrow_down_rounded, size: 30, color: Colors.black,),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                    Padding(padding: EdgeInsets.all(8)),
+                                    Row(
+                                      children: [
+                                        Text('예약번호'),
+                                        Padding(padding: EdgeInsets.all(8)),
+                                        Text('20221228001'),
+                                      ],
+                                    ),
+                                    Padding(padding: EdgeInsets.all(8)),
+                                    Row(
+                                      children: [
+                                        Text('예약자'),
+                                        Padding(padding: EdgeInsets.all(8)),
+                                        Text('이름'),
+                                      ],
+                                    ),
+                                    Padding(padding: EdgeInsets.all(8)),
+                                    Row(
+                                      children: [
+                                        Text('전화번호'),
+                                        Padding(padding: EdgeInsets.all(8)),
+                                        InkWell(
+                                          child: Text('010-0000-0000'),
+                                          onTap: () {},
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(padding: EdgeInsets.all(8)),
+                                    Row(
+                                      children: [
+                                        Text('대여일정'),
+                                        Padding(padding: EdgeInsets.all(8)),
+                                        Text('23.01.18 - 23.01.21'),
+                                      ],
+                                    ),
+                                    Padding(padding: EdgeInsets.all(8)),
+                                    Row(
+                                      children: [
+                                        Text('방문일정'),
+                                        Padding(padding: EdgeInsets.all(8)),
+                                        Text('22.12.23(화) 오전 11:00'),
+                                      ],
+                                    ),
+                                    Padding(padding: EdgeInsets.all(8)),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Container(
+                                          width: 120,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(16),
+                                          ),
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: Color(0xff205B48),
+                                            ),
+                                            child: Text('예약변경'),
+                                            onPressed: () {},
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 120,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(16),
+                                          ),
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: Color(0xff205B48),
+                                              elevation: 0
+                                            ),
+                                            child: Text('예약취소'),
+                                            onPressed: () {},
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(padding: EdgeInsets.all(8)),
+                                    Text('예약상품')
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SliverList(
+                              delegate: SliverChildBuilderDelegate(
+                                (context, index) => InkWell(
+                                  child: Container(
+                                    margin: EdgeInsets.all(10),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text('[대여종류]상품이름', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700)),
+                                        Text(' / ', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700)),
+                                        Text('사이즈', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700))
+                                      ],
+                                    ),
+                                  ),
+                                  onTap: () {},
+                                ),
+                                childCount: 10
+                              )
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  );
+                },
               ),
               childCount: 50
             )

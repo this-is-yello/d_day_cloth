@@ -184,16 +184,16 @@ class MemberDetail extends StatelessWidget {
                     margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
                     padding: EdgeInsets.only(left: 16),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            blurRadius: 4,
-                            offset: Offset(0, 4), 
-                          )
-                        ], 
-                        color: Colors.white,
-                      ),
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          blurRadius: 4,
+                          offset: Offset(0, 4), 
+                        )
+                      ], 
+                      color: Colors.white,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,

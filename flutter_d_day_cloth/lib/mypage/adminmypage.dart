@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_d_day_cloth/booking/bookmanegement.dart';
 import 'package:flutter_d_day_cloth/mypage/calender.dart';
-import 'package:flutter_d_day_cloth/mypage/member.dart';
+import 'package:flutter_d_day_cloth/mypage/membermanegement.dart';
+import 'package:flutter_d_day_cloth/product/productmanegement.dart';
 
 class AdminMypage extends StatelessWidget {
   const AdminMypage({super.key});
@@ -86,7 +87,9 @@ class AdminMypage extends StatelessWidget {
                           height: 56,
                           child: Center(child: Text('제품관리', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ClickProductManege()));
+                        },
                       ),
                     ),
                   ],
