@@ -77,8 +77,7 @@ class AdminMypage extends StatelessWidget {
                       child: InkWell(
                         child: Container(
                           height: 56,
-                          child: Center(
-                              child: Text('문의관리', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))),
+                          child: Center(child: Text('문의관리', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))),
                         ),
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => ClickInquiryManege()));
