@@ -12,11 +12,14 @@ class ClickMyPoint extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 420),
-              child: MyPointScreen()),
+            constraints: BoxConstraints(maxWidth: 420),
+            child: MyPointScreen()
+          ),
           Padding(padding: EdgeInsets.all(20)),
           ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 480), child: ToDownload()),
+            constraints: BoxConstraints(maxWidth: 480),
+            child: ToDownload()
+          ),
         ],
       ),
     );
@@ -33,8 +36,7 @@ class MyPointScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
-          title: Center(
-              child: Text('내 포인트', style: TextStyle(color: Colors.black))),
+          title: Center(child: Text('내 포인트', style: TextStyle(color: Colors.black))),
         ),
         body: CustomScrollView(slivers: [
           SliverAppBar(
@@ -52,21 +54,13 @@ class MyPointScreen extends StatelessWidget {
                   width: double.infinity,
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                      border: Border(
-                          bottom: BorderSide(color: Colors.grey, width: 1))),
+                    border: Border(bottom: BorderSide(color: Colors.grey, width: 1))
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('내 포인트',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700)),
-                      Text('0P',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w700))
+                      Text('내 포인트', style: TextStyle(color: Colors.black, fontSize: 24,  fontWeight: FontWeight.w700)),
+                      Text('0P', style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.w700))
                     ],
                   ),
                 ),
@@ -74,35 +68,33 @@ class MyPointScreen extends StatelessWidget {
             ),
           ),
           SliverList(
-              delegate: SliverChildBuilderDelegate(
-                  (context, index) => Container(
-                        padding: EdgeInsets.only(left: 16, right: 16),
-                        child: Row(
-                          children: [
-                            Flexible(
-                              flex: 3,
-                              child: Container(
-                                  height: 40,
-                                  child: Center(
-                                      child: Text(
-                                    '적립',
-                                    style: TextStyle(fontSize: 13),
-                                  ))),
-                            ),
-                            Flexible(
-                              flex: 3,
-                              child: Container(
-                                  height: 40,
-                                  child: Center(
-                                      child: Text(
-                                    '50000P',
-                                    style: TextStyle(fontSize: 13),
-                                  ))),
-                            ),
-                          ],
-                        ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => Container(
+                padding: EdgeInsets.only(left: 16, right: 16),
+                child: Row(
+                  children: [
+                    Flexible(
+                      flex: 3,
+                      child: Container(
+                        height: 40,
+                        child: Center(child: Text('적립',style: TextStyle(fontSize: 13)))
                       ),
-                  childCount: 8)),
-        ]));
+                    ),
+                    Flexible(
+                      flex: 3,
+                      child: Container(
+                        height: 40,
+                        child: Center( child: Text('50000P', style: TextStyle(fontSize: 13)))
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            childCount: 8
+            )
+          ),
+        ]
+      )
+    );
   }
 }

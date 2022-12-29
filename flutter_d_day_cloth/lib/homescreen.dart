@@ -35,20 +35,19 @@ class _HomeState extends State<Home> {
                 fit: FlexFit.tight,
                 child: InkWell(
                   child: Container(
-                      height: 160,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            blurRadius: 4,
-                            offset: Offset(0, 4), 
-                          )
-                        ], 
-                        color: whiteColor,
-                      ),
-                      
-                      child: Center(child: Text('면접대여', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))),
+                    height: 160,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          blurRadius: 4,
+                          offset: Offset(0, 4), 
+                        )
+                      ], 
+                      color: whiteColor,
+                    ),
+                    child: Center(child: Text('면접대여', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))),
                   ),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
@@ -77,9 +76,7 @@ class _HomeState extends State<Home> {
                       child: Center(child: Text('예복대여', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))),
                   ),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => ClickWeddingRent()
-                    ));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ClickWeddingRent()));
                   },
                 )
               )

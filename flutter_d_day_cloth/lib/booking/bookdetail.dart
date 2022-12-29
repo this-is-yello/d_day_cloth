@@ -127,13 +127,6 @@ class BookDetail extends StatelessWidget {
                           child: Column(
                             children: [
                               Row(
-                                children: [
-                                  Text('대여종류 : ', style: TextStyle(fontWeight: FontWeight.w700)),
-                                  Text('면접이게? 예복이게?')
-                                ]
-                              ),
-                              Padding(padding: EdgeInsets.all(2)),
-                              Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text('상품명 : ', style: TextStyle(fontWeight: FontWeight.w700)),
@@ -151,6 +144,22 @@ class BookDetail extends StatelessWidget {
                         ),
                       ],
                     ),
+                    Padding(padding: EdgeInsets.all(8)),
+                      Container(
+                        width: double.infinity,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text('금액 : ', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                                Text('50000원', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))
+                              ]
+                            ),
+                            Text('※매장에서 결제하며, 상담 후 가격은 변동될 수 있습니다.', style: TextStyle(fontSize: 12))
+                          ],
+                        ),
+                      ),
                     Padding(padding: EdgeInsets.all(8)),
                     Container(
                       child: Row(

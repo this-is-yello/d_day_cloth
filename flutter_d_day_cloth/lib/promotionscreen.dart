@@ -10,9 +10,7 @@ class PromotionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Center(
-          child: Text('Promotion Video', style: TextStyle(fontFamily: 'Lineseed'))
-        ),
+        child: Center(child: Text('Promotion Video', style: TextStyle(fontFamily: 'Lineseed'))),
       ),
       floatingActionButton: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -21,9 +19,7 @@ class PromotionScreen extends StatelessWidget {
         ),
         child: Text('대여하러가자', style: TextStyle(color: Colors.white, fontSize: 24)),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) => WebMain()
-          ));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => WebMain()));
         },
       ),
     );

@@ -14,9 +14,7 @@ class ToDownload extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Text('다운로드 유도하라 이 말이야!', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))
-            )
+            Center(child: Text('다운로드 유도하라 이 말이야!', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)))
           ],
         ),
       ),

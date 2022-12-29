@@ -104,7 +104,6 @@ class ProductManegement extends StatelessWidget {
                     ),
                     Tab(
                       text: '팬츠',
-
                     ),
                     Tab(
                       text: '셔츠',
@@ -169,7 +168,7 @@ class ProductManegement extends StatelessWidget {
             ],
           ),
         )
-        )
+      )
     );
   }
 }

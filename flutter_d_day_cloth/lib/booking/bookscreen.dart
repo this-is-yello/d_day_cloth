@@ -13,10 +13,14 @@ class ClickBooking extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 420), child: Booking()),
+            constraints: BoxConstraints(maxWidth: 420),
+            child: Booking()
+          ),
           Padding(padding: EdgeInsets.all(20)),
           ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 480), child: ToDownload()),
+            constraints: BoxConstraints(maxWidth: 480),
+            child: ToDownload()
+          ),
         ],
       ),
     );
@@ -56,14 +60,13 @@ class Booking extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          bottomLeft: Radius.circular(15)),
-                      color: Colors.grey,
-                    )),
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
+                    color: Colors.grey,
+                  )
+                ),
                 Container(
                   width: 260,
                   padding: EdgeInsets.all(16),
@@ -75,25 +78,12 @@ class Booking extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w700)),
                       Padding(padding: EdgeInsets.all(4)),
-                      Text('yyyy.mm.dd - yyyy.mm.dd',
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700)),
+                      Text('yyyy.mm.dd - yyyy.mm.dd', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w700)),
                       Padding(padding: EdgeInsets.all(4)),
                       InkWell(
-                        child: Text(
-                          '상세보기>',
-                          style: TextStyle(
-                              color: Color(0xff082EB5),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700),
-                        ),
+                        child: Text('상세보기>', style: TextStyle(color: Color(0xff082EB5), fontSize: 16, fontWeight: FontWeight.w700),),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ClickBookDetail()));
+                          Navigator.push( context, MaterialPageRoute(builder: (context) => ClickBookDetail()));
                         },
                       )
                     ],
@@ -121,14 +111,15 @@ class Booking extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          bottomLeft: Radius.circular(15)),
-                      color: Colors.grey,
-                    )),
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        bottomLeft: Radius.circular(15)),
+                    color: Colors.grey,
+                  )
+                ),
                 Container(
                   width: 260,
                   padding: EdgeInsets.all(16),
@@ -136,29 +127,14 @@ class Booking extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('[대여종류] 상품이름',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700)),
+                      Text('[대여종류] 상품이름', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                       Padding(padding: EdgeInsets.all(4)),
-                      Text('yyyy.mm.dd - yyyy.mm.dd',
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700)),
+                      Text('yyyy.mm.dd - yyyy.mm.dd', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w700)),
                       Padding(padding: EdgeInsets.all(4)),
                       InkWell(
-                        child: Text(
-                          '상세보기>',
-                          style: TextStyle(
-                              color: Color(0xff082EB5),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700),
-                        ),
+                        child: Text('상세보기>', style: TextStyle(color: Color(0xff082EB5), fontSize: 16, fontWeight: FontWeight.w700)),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ClickBookDetail()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBookDetail()));
                         },
                       )
                     ],

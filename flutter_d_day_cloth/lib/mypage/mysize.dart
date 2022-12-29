@@ -12,11 +12,14 @@ class ClickMySize extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 420),
-              child: MySizeScreen()),
+            constraints: BoxConstraints(maxWidth: 420),
+            child: MySizeScreen()
+          ),
           Padding(padding: EdgeInsets.all(20)),
           ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 480), child: ToDownload()),
+            constraints: BoxConstraints(maxWidth: 480),
+            child: ToDownload()
+          ),
         ],
       ),
     );
@@ -33,8 +36,7 @@ class MySizeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
-        title:
-            Center(child: Text('마이사이즈', style: TextStyle(color: Colors.black))),
+        title: Center(child: Text('마이사이즈', style: TextStyle(color: Colors.black))),
       ),
     );
   }
