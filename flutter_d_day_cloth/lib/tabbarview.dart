@@ -7,7 +7,7 @@ import 'package:flutter_d_day_cloth/homescreen.dart';
 import 'package:flutter_d_day_cloth/search/searchscreen.dart';
 import 'package:flutter_d_day_cloth/mypage/usermypage.dart';
 import 'package:flutter_d_day_cloth/mypage/adminmypage.dart';
-import 'package:flutter_d_day_cloth/booking/bookscreen.dart';
+import 'package:flutter_d_day_cloth/booking/bookhistory.dart';
 import 'package:flutter_d_day_cloth/shoppingbag/shoppingbag.dart';
 import 'package:flutter_d_day_cloth/inquiry.dart';
 import 'package:get/get.dart';
@@ -37,7 +37,7 @@ class _WebScreenState extends State<WebScreen> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
-          title: Text('by 覺 렌탈센터', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+          title: Text('by覺 렌탈센터', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
           actions: [
             IconButton(
               icon: Icon(Icons.shopping_bag, size: 30, color: Colors.black),
@@ -59,7 +59,7 @@ class _WebScreenState extends State<WebScreen> {
               child: Booking(),
             ),
             Center(
-              child: AdminMypage(),
+              child: UserMypage(),
             )
           ],
         ),

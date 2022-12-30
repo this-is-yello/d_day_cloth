@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_d_day_cloth/todownload.dart';
+import 'package:flutter_d_day_cloth/rent/gotobook.dart';
 
 class ClickShoppingBag extends StatelessWidget {
   const ClickShoppingBag({super.key});
@@ -136,7 +137,9 @@ class _ShoppingBagState extends State<ShoppingBag> {
                                   // minimumSize: Size(double.infinity, 50)
                                 ),
                                 child: Text('예약하기'),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ClickGoToBook()));
+                                },
                               )
                             ],
                           ),
@@ -205,7 +208,9 @@ class BottomSheet extends StatelessWidget {
               minimumSize: Size(double.infinity, 50)
             ),
             child: Text('예약하기'),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ClickGoToBook()));
+            },
           ),
         ],
       ),

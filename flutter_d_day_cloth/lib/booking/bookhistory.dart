@@ -74,9 +74,7 @@ class Booking extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('[대여종류] 상품이름',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700)),
+                      Text('[대여종류] 상품이름', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                       Padding(padding: EdgeInsets.all(4)),
                       Text('yyyy.mm.dd - yyyy.mm.dd', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w700)),
                       Padding(padding: EdgeInsets.all(4)),
@@ -115,8 +113,9 @@ class Booking extends StatelessWidget {
                   height: 120,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        bottomLeft: Radius.circular(15)),
+                      topLeft: Radius.circular(15),
+                      bottomLeft: Radius.circular(15)
+                    ),
                     color: Colors.grey,
                   )
                 ),

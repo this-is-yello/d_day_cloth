@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_d_day_cloth/login/login.dart';
 import 'package:flutter_d_day_cloth/mypage/calender.dart';
-import 'package:flutter_d_day_cloth/booking/bookscreen.dart';
+import 'package:flutter_d_day_cloth/booking/bookhistory.dart';
 import 'package:flutter_d_day_cloth/mypage/mysize.dart';
 import 'package:flutter_d_day_cloth/mypage/mypoint.dart';
 
@@ -17,22 +18,27 @@ class UserMypage extends StatelessWidget {
             padding: EdgeInsets.all(16),
             child: Text('마이페이지', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))
           ),
-          Container(
-            child: ListTile(
-              leading: Icon(Icons.photo, size: 50),
-              title: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-                  Text('010-1212-3535', style: TextStyle(color: Colors.grey))
-                ],
-              ),
-              trailing: IconButton(
-                icon: Icon(Icons.keyboard_arrow_right, size: 30),
-                onPressed: () {},
+          InkWell(
+            child: Container(
+              // color: Colors.white,
+              child: ListTile(
+                leading: Icon(Icons.photo, size: 50),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('로그인하세요.', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                    // Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                    // Text('010-1212-3535', style: TextStyle(color: Colors.grey))
+                  ],
+                ),
+                trailing: Icon(Icons.keyboard_arrow_right, size: 30)
               ),
             ),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ClickLogIn()));
+            },
           ),
+          Padding(padding: EdgeInsets.all(8)),
           Container(
             padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
             child: Container(
@@ -84,7 +90,18 @@ class UserMypage extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBooking()));
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) =>
+                        Scaffold(  
+                          backgroundColor: Colors.white,
+                          appBar: AppBar(
+                            title: Center(child: Text('예약내역', style: TextStyle(color: Colors.black, ),)),
+                            backgroundColor: Colors.white,
+                            iconTheme: IconThemeData(color: Colors.black),
+                          ),
+                          body: ClickBooking(),
+                        ) 
+                      ));
                     },
                   ),
                 ],

@@ -11,6 +11,7 @@ import 'package:flutter_d_day_cloth/mypage/givepoint.dart';
 import 'package:flutter_d_day_cloth/booking/bookmanegement.dart';
 import 'package:flutter_d_day_cloth/product/productmanegement.dart';
 import 'package:flutter_d_day_cloth/inquirymanegement.dart';
+import 'package:flutter_d_day_cloth/login/login.dart';
 
 void main() {
   runApp(MaterialApp(
