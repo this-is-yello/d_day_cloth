@@ -112,7 +112,7 @@ class Search extends StatelessWidget {
                         child: ListTile(
                           leading: Icon(Icons.search),
                           title: InkWell(
-                            child: Text('내 검색어는 비밀이라네!'),
+                            child: Text('검은색 정장'),
                             onTap: () {},
                           ),
                           trailing: TextButton(
