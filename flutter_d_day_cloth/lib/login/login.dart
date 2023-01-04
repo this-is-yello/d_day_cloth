@@ -62,6 +62,7 @@ class LogIn extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
               child: TextField(
                 // controller: inputPassword,
+                obscureText: true,
                 decoration: InputDecoration(
                   hintText: '비밀번호',
                   border: OutlineInputBorder(borderSide: BorderSide(width: 1)),

@@ -1,3 +1,4 @@
+import 'package:custom_date_range_picker/custom_date_range_picker.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_d_day_cloth/todownload.dart';
@@ -27,16 +28,37 @@ class ClickPeriodSet extends StatelessWidget {
 }
 
 
-class DatePick extends StatelessWidget {
+class DatePick extends StatefulWidget {
   const DatePick({super.key});
+
+  @override
+  State<DatePick> createState() => _DatePickState();
+}
+
+class _DatePickState extends State<DatePick> {
+
+  var startDate;
+  var endDate;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: DateRangePickerDialog(
-        firstDate: DateTime(2022),
-        lastDate: DateTime(2099),
-      ),
+      body: CustomDateRangePicker(
+        barrierDismissible: true,
+        // initialStartDate: DateTime.now(),
+        // initialEndDate: DateTime.now().add(const Duration(days: 30)),
+        minimumDate: DateTime.now(),
+        maximumDate: DateTime.now().add(const Duration(days: 30)),
+        onApplyClick: (start, end) {
+          endDate = end;
+          startDate = start;
+        },
+        onCancelClick: () {
+          endDate = null;
+          startDate = null;
+        },
+
+      )
     );
   }
 }

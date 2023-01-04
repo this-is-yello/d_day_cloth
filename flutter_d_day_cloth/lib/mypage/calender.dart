@@ -1,3 +1,4 @@
+import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 
 import 'package:table_calendar/table_calendar.dart';
@@ -19,6 +20,22 @@ class TableCalendarScreen extends StatelessWidget {
           formatButtonVisible: false,
         ),
       ),
+    );
+  }
+}
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: CalendarDatePicker2(
+        config: CalendarDatePicker2Config(
+            calendarType: CalendarDatePicker2Type.multi,
+        ),
+        // onValueChanged: (dates) => _yourHandler(dates),
+        initialValue: [],
+      )
     );
   }
 }

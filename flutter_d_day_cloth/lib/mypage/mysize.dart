@@ -38,6 +38,44 @@ class MySizeScreen extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.black),
         title: Center(child: Text('마이사이즈', style: TextStyle(color: Colors.black))),
       ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    child: Text('상체 사이즈', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                  ),
+                  Padding(padding: EdgeInsets.all(4)),
+                  Container(
+                    width: double.infinity,
+                    height: 300,
+                    color: Colors.indigo,
+                  ),
+                  Padding(padding: EdgeInsets.all(16)),
+                  Container(
+                    width: double.infinity,
+                    child: Text('하체 사이즈', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                  ),
+                  Padding(padding: EdgeInsets.all(4)),
+                  Container(
+                    width: double.infinity,
+                    height: 300,
+                    color: Colors.indigo,
+                  ),
+                  Padding(padding: EdgeInsets.all(16)),
+                  Container(
+                    //설명
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

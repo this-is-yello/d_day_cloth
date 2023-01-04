@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_d_day_cloth/todownload.dart';
-import 'package:flutter_d_day_cloth/rent/gotobook.dart';
+import 'package:flutter_d_day_cloth/booking/gotobook.dart';
 
 class ClickShoppingBag extends StatelessWidget {
   const ClickShoppingBag({super.key});

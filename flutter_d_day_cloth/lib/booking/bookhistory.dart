@@ -14,7 +14,13 @@ class ClickBooking extends StatelessWidget {
         children: [
           ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 420),
-            child: Booking()
+            child: Scaffold(
+              appBar: AppBar(
+                backgroundColor: Colors.white,
+                iconTheme: IconThemeData(color: Colors.black),
+              ),
+              body: Booking(),
+            )
           ),
           Padding(padding: EdgeInsets.all(20)),
           ConstrainedBox(

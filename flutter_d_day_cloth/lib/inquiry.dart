@@ -214,8 +214,10 @@ class InquiryScreen extends StatelessWidget {
               fit: FlexFit.tight,
               child: InkWell(
                 child: Container(
+                  margin: EdgeInsets.fromLTRB(8, 8, 4, 8),
                   height: 56,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
                     color: Color(0xff205B48),
                   ),
                   child: Center(child: Text('취소', style: TextStyle(color: Colors.white, fontSize: 16))),
@@ -225,13 +227,15 @@ class InquiryScreen extends StatelessWidget {
                 },
               ),
             ),
-            Padding(padding: EdgeInsets.all(1)),
+            // Padding(padding: EdgeInsets.all(1)),
             Flexible(
               fit: FlexFit.tight,
               child: InkWell(
                 child: Container(
+                  margin: EdgeInsets.fromLTRB(4, 8, 8, 8),
                   height: 56,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
                     color: Color(0xff205B48),
                   ),
                   child: Center(child: Text('문의하기', style: TextStyle(color: Colors.white, fontSize: 16))),

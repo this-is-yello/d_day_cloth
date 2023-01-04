@@ -90,18 +90,7 @@ class UserMypage extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) =>
-                        Scaffold(  
-                          backgroundColor: Colors.white,
-                          appBar: AppBar(
-                            title: Center(child: Text('예약내역', style: TextStyle(color: Colors.black, ),)),
-                            backgroundColor: Colors.white,
-                            iconTheme: IconThemeData(color: Colors.black),
-                          ),
-                          body: ClickBooking(),
-                        ) 
-                      ));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBooking()));
                     },
                   ),
                 ],

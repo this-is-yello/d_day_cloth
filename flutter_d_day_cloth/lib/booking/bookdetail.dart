@@ -42,7 +42,7 @@ class BookDetail extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(16),
-            child: Text('예약내역 상세정보', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+            child: Text('예약내역 상세', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
           ),
           Column(
             verticalDirection: VerticalDirection.up,
@@ -139,6 +139,18 @@ class BookDetail extends StatelessWidget {
                                   )
                                 ]
                               ),
+                              Padding(padding: EdgeInsets.all(4)),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('방문일자 : ', style: TextStyle(fontWeight: FontWeight.w700)),
+                                  Column(
+                                    children: [
+                                      Text('yyyy.mm.dd(d)'),
+                                    ],
+                                  )
+                                ]
+                              ),
                             ],
                           ),
                         ),
@@ -152,7 +164,7 @@ class BookDetail extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Text('금액 : ', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                                Text('예상금액 : ', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
                                 Text('50000원', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))
                               ]
                             ),

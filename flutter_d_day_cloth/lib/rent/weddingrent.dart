@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_d_day_cloth/rent/product.dart';
+import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 
 import 'package:flutter_d_day_cloth/todownload.dart';
 import 'package:flutter_d_day_cloth/rent/Period.dart';
@@ -63,17 +64,14 @@ class WeddingRent extends StatelessWidget {
                 ),
               ),
               onTap: () async{
-                await showDialog(
+                showCalendarDatePicker2Dialog(
                   context: context,
-                  builder: (context) {
-                    return Dialog(
-                      child: Container(
-                        width: 380,
-                        height: 600,
-                        child: DatePick(),
-                      ),
-                    );
-                  }
+                  config: CalendarDatePicker2WithActionButtonsConfig(
+                    calendarType: CalendarDatePicker2Type.range,
+                  ),
+                  dialogSize: const Size(325, 400),
+                  // initialValue: _dialogCalendarPickerValue,
+                  borderRadius: BorderRadius.circular(15),
                 );
               },
             ),

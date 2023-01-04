@@ -15,9 +15,9 @@ class PromotionScreen extends StatelessWidget {
       floatingActionButton: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: Color(0xff205B48),
-          minimumSize: Size(200, 80),
+          minimumSize: Size(300, 120),
         ),
-        child: Text('대여하러가자', style: TextStyle(color: Colors.white, fontSize: 24)),
+        child: Text('대여하러가자', style: TextStyle(color: Colors.white, fontSize: 32)),
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => WebMain()));
         },
@@ -37,7 +37,7 @@ class WebMain extends StatelessWidget {
         children: [
           ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 420),
-            child: WebScreen()
+            child: TabBarScreen()
           ),
           Padding(padding: EdgeInsets.all(20)),
           ConstrainedBox(

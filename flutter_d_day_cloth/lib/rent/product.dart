@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_d_day_cloth/todownload.dart';
 import 'package:flutter_d_day_cloth/inquiry.dart';
 import 'package:flutter_d_day_cloth/shoppingbag/shoppingbag.dart';
-import 'package:flutter_d_day_cloth/rent/gotobook.dart';
+import 'package:flutter_d_day_cloth/booking/gotobook.dart';
 
 class ClickProduct extends StatelessWidget {
   const ClickProduct({super.key});
@@ -155,6 +155,66 @@ class _ProductScreenState extends State<ProductScreen> {
               ],
             ),
           ),
+          Container(
+            margin: EdgeInsets.only(bottom: 20),
+            padding: EdgeInsets.all(16),
+            color: Colors.grey[200],
+            width: double.infinity,
+            height: 400,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('대여후기', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                Padding(padding: EdgeInsets.all(8)),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      color: Colors.black,
+                    ),
+                    Padding(padding: EdgeInsets.all(8)),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                        Row(
+                          children: [
+                            Text('남성' + ', ' + '190cm / 90kg', style: TextStyle(color: Colors.grey)),
+                            Text(', ' + '상의XL/하의XL', style: TextStyle(color: Colors.grey)),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Padding(padding: EdgeInsets.all(8)),
+                Text('좋아요. 잘입었습니다.'),
+                Padding(padding: EdgeInsets.all(8)),
+                Row(
+                  children: [
+                    Flexible(
+                      flex: 1,
+                      child: Container(
+                        height: 200,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.all(8)),
+                    Flexible(
+                      flex: 1,
+                      child: Container(
+                        height: 200,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: Builder(
@@ -211,6 +271,7 @@ class _ProductScreenState extends State<ProductScreen> {
                             child: Text('이동하기', style: (TextStyle(color: Color(0xFF205B48))),),
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => ClickShoppingBag()));
+                              // Navigator.pop(context);
                             },
                           ),
                           TextButton(

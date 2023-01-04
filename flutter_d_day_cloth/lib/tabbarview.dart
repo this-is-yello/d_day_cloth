@@ -12,21 +12,16 @@ import 'package:flutter_d_day_cloth/shoppingbag/shoppingbag.dart';
 import 'package:flutter_d_day_cloth/inquiry.dart';
 import 'package:get/get.dart';
 
-class WebScreen extends StatefulWidget {
-  const WebScreen({super.key});
+class TabBarScreen extends StatefulWidget {
+  const TabBarScreen({super.key});
 
   @override
-  State<WebScreen> createState() => _WebScreenState();
+  State<TabBarScreen> createState() => _TabBarScreenState();
 }
 
-class _WebScreenState extends State<WebScreen> {
+class _TabBarScreenState extends State<TabBarScreen> {
   CarouselController carouselController = CarouselController();
 
-  // myPageState() {
-  //   if() {
-
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +54,7 @@ class _WebScreenState extends State<WebScreen> {
               child: Booking(),
             ),
             Center(
-              child: AdminMypage(),
+              child: UserMypage(),
             )
           ],
         ),
