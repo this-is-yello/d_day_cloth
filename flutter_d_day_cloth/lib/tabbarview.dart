@@ -3,11 +3,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter_d_day_cloth/todownload.dart';
 import 'package:flutter_d_day_cloth/promotionscreen.dart';
-import 'package:flutter_d_day_cloth/homescreen.dart';
-import 'package:flutter_d_day_cloth/search/searchscreen.dart';
-import 'package:flutter_d_day_cloth/mypage/usermypage.dart';
-import 'package:flutter_d_day_cloth/mypage/adminmypage.dart';
-import 'package:flutter_d_day_cloth/booking/bookhistory.dart';
+import 'package:flutter_d_day_cloth/tabbarview/homescreen.dart';
+import 'package:flutter_d_day_cloth/tabbarview/searchscreen.dart';
+import 'package:flutter_d_day_cloth/tabbarview/mypage.dart';
+import 'package:flutter_d_day_cloth/tabbarview/bookhistory.dart';
 import 'package:flutter_d_day_cloth/shoppingbag/shoppingbag.dart';
 import 'package:flutter_d_day_cloth/inquiry.dart';
 import 'package:get/get.dart';
@@ -51,10 +50,10 @@ class _TabBarScreenState extends State<TabBarScreen> {
               child: Search(),
             ),
             Center(
-              child: Booking(),
+              child: BookHistory(),
             ),
             Center(
-              child: UserMypage(),
+              child: Mypage(),
             )
           ],
         ),

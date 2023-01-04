@@ -18,7 +18,7 @@ class ClickProduct extends StatelessWidget {
         children: [
           ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 420),
-            child: ProductScreen()
+            child: ProductDetail()
           ),
           Padding(padding: EdgeInsets.all(20)),
           ConstrainedBox(
@@ -31,14 +31,14 @@ class ClickProduct extends StatelessWidget {
   }
 }
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({super.key});
+class ProductDetail extends StatefulWidget {
+  const ProductDetail({super.key});
 
   @override
-  State<ProductScreen> createState() => _ProductScreenState();
+  State<ProductDetail> createState() => _ProductDetailState();
 }
 
-class _ProductScreenState extends State<ProductScreen> {
+class _ProductDetailState extends State<ProductDetail> {
 
   var clickBtn = 0;
 
@@ -53,168 +53,191 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Center(child: Text('상품상세', style: TextStyle(color: Colors.black, ),)),
+        title: Text('상품상세', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: ListView(
-        children: [
-          Container(
-            margin: EdgeInsets.only(bottom: 20),
-            child: Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 400,
-                  color: Colors.black,
-                ),
-                Container(
-                  color: Colors.white,
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('렌탈샵이름', style: TextStyle(color: Colors.grey),),
-                      Text('[대여종류]상품이름', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text('0원', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-                          Container(
-                            height: 50,
-                            child: Row(
-                              children: [
-                                IconButton(
-                                  icon: Icon(Icons.share, size: 30),
-                                  onPressed: () {},
-                                ),
-                                Padding(padding: EdgeInsets.all(4)),
-                                IconButton(
-                                  icon: Icon(Icons.favorite_border, size: 30),
-                                  onPressed: () {},
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 8, bottom: 16),
-                        color: Colors.black,
-                        width: double.infinity,
-                        height: 2,
-                      ),
-                      InkWell(
-                        child: Text('(0개의 후기)'),
-                        onTap: () {},
-                      )
-                    ],
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 400,
+                    color: Color(0xFF205B48),
                   ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 20),
-            padding: EdgeInsets.all(16),
-            color: Colors.grey[200],
-            width: double.infinity,
-            height: 200,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('기본정보', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 20),
-            padding: EdgeInsets.all(16),
-            color: Colors.grey[200],
-            width: double.infinity,
-            height: 1200,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('상품소개', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 20),
-            padding: EdgeInsets.all(16),
-            color: Colors.grey[200],
-            width: double.infinity,
-            height: 400,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('위치정보', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 20),
-            padding: EdgeInsets.all(16),
-            color: Colors.grey[200],
-            width: double.infinity,
-            height: 400,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('대여후기', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-                Padding(padding: EdgeInsets.all(8)),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 50,
-                      height: 50,
-                      color: Colors.black,
-                    ),
-                    Padding(padding: EdgeInsets.all(8)),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(16),
+                    color: Colors.white,
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text('남성' + ', ' + '190cm / 90kg', style: TextStyle(color: Colors.grey)),
-                            Text(', ' + '상의XL/하의XL', style: TextStyle(color: Colors.grey)),
+                            Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('김주현바이각', style: TextStyle(color: Colors.grey)),
+                                  Padding(padding: EdgeInsets.all(4)),
+                                  Text('[대여종류] 상품이름', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                                  Padding(padding: EdgeInsets.all(4)),
+                                  Text('0원', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700))
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                    icon: Icon(Icons.share, size: 30),
+                                    onPressed: () {},
+                                  ),
+                                  Padding(padding: EdgeInsets.all(8)),
+                                  IconButton(
+                                    icon: Icon(Icons.favorite_border, size: 30),
+                                    onPressed: () {},
+                                  )
+                                ],
+                              )
+                            )
                           ],
+                        ),
+                        Padding(padding: EdgeInsets.all(8)),
+                        Container(
+                          width: double.infinity,
+                          height: 2,
+                          color: Colors.grey,
+                        ),
+                        Padding(padding: EdgeInsets.all(8)),
+                        InkWell(
+                          child: Text('(0개의 후기)'),
+                          onTap: () {},
                         )
                       ],
                     ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.all(8)),
-                Text('좋아요. 잘입었습니다.'),
-                Padding(padding: EdgeInsets.all(8)),
-                Row(
-                  children: [
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        height: 200,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.all(8)),
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        height: 200,
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                )
-              ],
+                  ),
+                ]
+              ),
             ),
           ),
+          SliverPadding(padding: EdgeInsets.all(8)),
+          SliverToBoxAdapter(
+            child: Container(
+              width: double.infinity,
+              height: 400,
+              padding: EdgeInsets.all(16),
+              color: Colors.white,
+              child: Text('기본정보', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+            ),
+          ),
+          SliverPadding(padding: EdgeInsets.all(8)),
+          SliverToBoxAdapter(
+            child: Container(
+              width: double.infinity,
+              height: 3000,
+              padding: EdgeInsets.all(16),
+              color: Colors.white,
+              child: Text('상품소개', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+            ),
+          ),
+          SliverPadding(padding: EdgeInsets.all(8)),
+          SliverToBoxAdapter(
+            child: Container(
+              width: double.infinity,
+              height: 400,
+              padding: EdgeInsets.all(16),
+              color: Colors.white,
+              child: Text('위치정보', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+            ),
+          ),
+          SliverPadding(padding: EdgeInsets.all(8)),
+          SliverToBoxAdapter(
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(16),
+              color: Colors.white,
+              child: Text('대여후기', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+            ),
+          ),
+          // SliverList(
+          //   delegate: SliverChildBuilderDelegate(
+          //     (context, index) => Container(
+          //       padding: EdgeInsets.fromLTRB(16, 0, 16, 20),
+          //       color: Colors.white,
+          //       child: Column(
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           Row(
+          //             crossAxisAlignment: CrossAxisAlignment.center,
+          //             children: [
+          //               Container(
+          //                 width: 50,
+          //                 height: 50,
+          //                 decoration: BoxDecoration(
+          //                   color: Colors.black,
+          //                   borderRadius: BorderRadius.circular(100)
+          //                 ),
+          //               ),
+          //               Padding(padding: EdgeInsets.all(8)),
+          //               Column(
+          //                 mainAxisAlignment: MainAxisAlignment.center,
+          //                 crossAxisAlignment: CrossAxisAlignment.start,
+          //                 children: [
+          //                   Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+          //                   Row(
+          //                     children: [
+          //                       Text('남성' + ', ' + '190cm / 90kg', style: TextStyle(color: Colors.grey)),
+          //                       Text(', ' + '상의XL/하의XL', style: TextStyle(color: Colors.grey)),
+          //                     ],
+          //                   )
+          //                 ],
+          //               ),
+          //             ],
+          //           ),
+          //           Padding(padding: EdgeInsets.all(8)),
+          //           Text('좋아요. 잘입었습니다.'),
+          //           Padding(padding: EdgeInsets.all(8)),
+          //           Row(
+          //             children: [
+          //               Flexible(
+          //                 flex: 1,
+          //                 child: Container(
+          //                   height: 120,
+          //                   color: Color(0xFF205B48),
+          //                 ),
+          //               ),
+          //               Padding(padding: EdgeInsets.all(8)),
+          //               Flexible(
+          //                 flex: 1,
+          //                 child: Container(
+          //                   height: 120,
+          //                   color: Color(0xFF205B48),
+          //                 ),
+          //               ),
+          //               Padding(padding: EdgeInsets.all(8)),
+          //               Flexible(
+          //                 flex: 1,
+          //                 child: Container(
+          //                   height: 120,
+          //                   color: Color(0xFF205B48),
+          //                 ),
+          //               )
+          //             ],
+          //           )
+          //         ],
+          //       ),
+          //     ),
+          //     childCount: 1
+          //   ),
+          // ),
         ],
       ),
       bottomNavigationBar: Builder(
@@ -258,7 +281,6 @@ class _ProductScreenState extends State<ProductScreen> {
                 ),
                 IconButton(
                   alignment: Alignment.center,
-
                   icon: Icon(Icons.shopping_bag_outlined, size: 32,),
                   onPressed: () {
                     showDialog(
@@ -289,7 +311,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   alignment: Alignment.center,
                   icon: Icon(Icons.headset_mic_outlined, size: 30,  color: Colors.black),
                   onPressed: () {
-                    Navigator.push( context, MaterialPageRoute(builder: (context) => ClickInquiry()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ClickInquiry()));
                   },
                 ),
               ],
@@ -297,11 +319,6 @@ class _ProductScreenState extends State<ProductScreen> {
           ),
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(Icons.arrow_drop_up, size: 30),
-      //   backgroundColor: Color(0xff205B48),
-      //   onPressed: () {}
-      // ),
     );
   }
 }

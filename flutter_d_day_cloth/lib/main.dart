@@ -4,14 +4,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_d_day_cloth/promotionscreen.dart';
-import 'package:flutter_d_day_cloth/mypage/adminmypage.dart';
-import 'package:flutter_d_day_cloth/mypage/membermanegement.dart';
+import 'package:flutter_d_day_cloth/manegement/membermanegement.dart';
 import 'package:flutter_d_day_cloth/booking/gotobook.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_d_day_cloth/mypage/givepoint.dart';
-import 'package:flutter_d_day_cloth/booking/bookmanegement.dart';
-import 'package:flutter_d_day_cloth/product/productmanegement.dart';
-import 'package:flutter_d_day_cloth/inquirymanegement.dart';
+import 'package:flutter_d_day_cloth/manegement/bookmanegement.dart';
+import 'package:flutter_d_day_cloth/manegement/productmanegement.dart';
+import 'package:flutter_d_day_cloth/manegement/inquirymanegement.dart';
 import 'package:flutter_d_day_cloth/login/login.dart';
 
 void main() {

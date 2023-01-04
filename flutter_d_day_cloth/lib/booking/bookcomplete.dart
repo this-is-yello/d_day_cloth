@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_d_day_cloth/todownload.dart';
-import 'package:flutter_d_day_cloth/booking/bookhistory.dart';
+import 'package:flutter_d_day_cloth/tabbarview/bookhistory.dart';
 import 'package:flutter_d_day_cloth/promotionscreen.dart';
 import 'package:flutter_d_day_cloth/booking/bookdetail.dart';
 
@@ -74,7 +74,7 @@ class Bookcomplete extends StatelessWidget {
                 height: 200,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('예약이 완료되었습니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
                     Text('방문일자는' + ' ' + 'yyyy.mm.dd' + '입니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))
