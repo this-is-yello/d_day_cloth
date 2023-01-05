@@ -196,7 +196,7 @@ class UserMyPageState extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('내 포인트', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                            Text('마이 포인트', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                             Padding(padding: EdgeInsets.all(4)),
                             Text('0 P', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                           ]
@@ -335,7 +335,7 @@ class AdminMyPageState extends StatelessWidget {
             )
           ),
         ),
-         SliverPadding(
+        SliverPadding(
           padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
           sliver: SliverGrid.count(
             crossAxisCount: 2,

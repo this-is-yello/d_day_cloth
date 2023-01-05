@@ -7,7 +7,7 @@ import 'package:flutter_d_day_cloth/tabbarview/homescreen.dart';
 import 'package:flutter_d_day_cloth/tabbarview/searchscreen.dart';
 import 'package:flutter_d_day_cloth/tabbarview/mypage.dart';
 import 'package:flutter_d_day_cloth/tabbarview/bookhistory.dart';
-import 'package:flutter_d_day_cloth/shoppingbag/shoppingbag.dart';
+import 'package:flutter_d_day_cloth/tabbarview/shoppingbag.dart';
 import 'package:flutter_d_day_cloth/inquiry.dart';
 import 'package:get/get.dart';
 

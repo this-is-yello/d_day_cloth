@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_d_day_cloth/todownload.dart';
 import 'package:flutter_d_day_cloth/inquiry.dart';
-import 'package:flutter_d_day_cloth/shoppingbag/shoppingbag.dart';
+import 'package:flutter_d_day_cloth/tabbarview/shoppingbag.dart';
 import 'package:flutter_d_day_cloth/booking/gotobook.dart';
 
 class ClickProduct extends StatelessWidget {
@@ -167,77 +167,77 @@ class _ProductDetailState extends State<ProductDetail> {
               child: Text('대여후기', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
             ),
           ),
-          // SliverList(
-          //   delegate: SliverChildBuilderDelegate(
-          //     (context, index) => Container(
-          //       padding: EdgeInsets.fromLTRB(16, 0, 16, 20),
-          //       color: Colors.white,
-          //       child: Column(
-          //         crossAxisAlignment: CrossAxisAlignment.start,
-          //         children: [
-          //           Row(
-          //             crossAxisAlignment: CrossAxisAlignment.center,
-          //             children: [
-          //               Container(
-          //                 width: 50,
-          //                 height: 50,
-          //                 decoration: BoxDecoration(
-          //                   color: Colors.black,
-          //                   borderRadius: BorderRadius.circular(100)
-          //                 ),
-          //               ),
-          //               Padding(padding: EdgeInsets.all(8)),
-          //               Column(
-          //                 mainAxisAlignment: MainAxisAlignment.center,
-          //                 crossAxisAlignment: CrossAxisAlignment.start,
-          //                 children: [
-          //                   Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-          //                   Row(
-          //                     children: [
-          //                       Text('남성' + ', ' + '190cm / 90kg', style: TextStyle(color: Colors.grey)),
-          //                       Text(', ' + '상의XL/하의XL', style: TextStyle(color: Colors.grey)),
-          //                     ],
-          //                   )
-          //                 ],
-          //               ),
-          //             ],
-          //           ),
-          //           Padding(padding: EdgeInsets.all(8)),
-          //           Text('좋아요. 잘입었습니다.'),
-          //           Padding(padding: EdgeInsets.all(8)),
-          //           Row(
-          //             children: [
-          //               Flexible(
-          //                 flex: 1,
-          //                 child: Container(
-          //                   height: 120,
-          //                   color: Color(0xFF205B48),
-          //                 ),
-          //               ),
-          //               Padding(padding: EdgeInsets.all(8)),
-          //               Flexible(
-          //                 flex: 1,
-          //                 child: Container(
-          //                   height: 120,
-          //                   color: Color(0xFF205B48),
-          //                 ),
-          //               ),
-          //               Padding(padding: EdgeInsets.all(8)),
-          //               Flexible(
-          //                 flex: 1,
-          //                 child: Container(
-          //                   height: 120,
-          //                   color: Color(0xFF205B48),
-          //                 ),
-          //               )
-          //             ],
-          //           )
-          //         ],
-          //       ),
-          //     ),
-          //     childCount: 1
-          //   ),
-          // ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => Container(
+                padding: EdgeInsets.fromLTRB(16, 0, 16, 20),
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(100)
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.all(8)),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('바이각', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                            Row(
+                              children: [
+                                Text('남성' + ', ' + '190cm / 90kg', style: TextStyle(color: Colors.grey)),
+                                Text(', ' + '상의XL/하의XL', style: TextStyle(color: Colors.grey)),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.all(8)),
+                    Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', maxLines: 2),
+                    Padding(padding: EdgeInsets.all(8)),
+                    Row(
+                      children: [
+                        Flexible(
+                          flex: 1,
+                          child: Container(
+                            height: 160,
+                            color: Color(0xFF205B48),
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.all(8)),
+                        Flexible(
+                          flex: 1,
+                          child: Container(
+                            height: 160,
+                            color: Color(0xFF205B48),
+                          ),
+                        ),
+                        // Padding(padding: EdgeInsets.all(8)),
+                        // Flexible(
+                        //   flex: 1,
+                        //   child: Container(
+                        //     height: 120,
+                        //     color: Color(0xFF205B48),
+                        //   ),
+                        // )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              childCount: 2
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: Builder(

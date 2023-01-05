@@ -88,7 +88,7 @@ class BookHistory extends StatelessWidget {
                           children: [
                             Text('[대여종류] 상품이름', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                             Padding(padding: EdgeInsets.all(2)),
-                            Text('yy.mm.dd - yy.mm.dd', style: TextStyle(color: Colors.grey, fontSize: 18)),
+                            Text('yy.mm.dd - yy.mm.dd', style: TextStyle(color: Colors.grey, fontSize: 16)),
                             Padding(padding: EdgeInsets.all(2)),
                             InkWell(
                               child: Text('상세보기>', style: TextStyle(color: Colors.indigo, fontSize: 16, fontWeight: FontWeight.w700),),

@@ -49,168 +49,183 @@ class _GoToBookState extends State<GoToBook> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        title: Text('예약상세설정', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: Builder(
-        builder: (context) {
-          return ListView(
-            children: [
-              Container(
-                height: 80,
-                width: double.infinity,
-                margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: EdgeInsets.all(16),
+            sliver: SliverToBoxAdapter(
+              child: Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        blurRadius: 4,
-                        offset: Offset(0, 4), 
-                      )
-                    ], 
-                    color: Colors.white,
-                  ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 4,
+                      offset: Offset(0, 4),
+                    )
+                  ],
+                ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
                       width: 80,
                       height: 80,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
-                        color: Colors.grey,
-                      )
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('[대여종류] 상품이름', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-                          Padding(padding: EdgeInsets.all(2)),
-                          Text('yyyy.mm.dd - yyyy.mm.dd', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w700)),
-                        ],
+                        color: Color(0xFF205B48),
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(8), bottomLeft: Radius.circular(8))
                       ),
                     ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      child: Text('방문상담일 설정', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-                    ),
                     Padding(padding: EdgeInsets.all(8)),
-                    Row(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Flexible(
-                          fit: FlexFit.tight,
-                          child: Container(
-                            height: 80,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.grey[200],
-                            ),
-                            child: InkWell(
-                              child: Center(child: Text('날짜:' + ' ' + 'yy.mm.dd(d)', style: TextStyle(fontSize: 18))),
-                              onTap: () {
-                                DatePicker.showDatePicker(
-                                  context,
-                                  showTitleActions: true,
-                                  minTime: DateTime(2022, 3, 2),
-                                  maxTime: DateTime(2099, 12, 31),
-                                  onChanged: (data) {print('change $data');},
-                                  onConfirm: (data) {print('confirm $data');},
-                                  currentTime: DateTime.now(),
-                                  locale: LocaleType.ko,
-                                  theme: DatePickerTheme(
-                                    itemStyle: TextStyle(
-                                      color: Color(0xff205B48),
-                                      fontSize: 20
-                                    ),
-                                    doneStyle: TextStyle(
-                                      color: Color(0xff205B48),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700
-                                    )
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.all(8)),
-                        Flexible(
-                          fit: FlexFit.tight,
-                          child: Container(
-                            height: 80,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.grey[200],
-                            ),
-                            child: InkWell(
-                              child: Center(child: Text('시간:' + ' ' + '오전 11:00', style: TextStyle(fontSize: 18))),
-                              onTap: () {
-                                DatePicker.showTime12hPicker(
-                                  context,
-                                  // showTitleActions: true,
-                                  onChanged: (data) {print('change $data');},
-                                  onConfirm: (data) {print('confirm $data');},
-                                  // currentTime: DateTime(12, 00),
-                                  locale: LocaleType.ko,
-                                  theme: DatePickerTheme(
-                                    itemStyle: TextStyle(
-                                      color: Color(0xff205B48),
-                                      fontSize: 20
-                                    ),
-                                    doneStyle: TextStyle(
-                                      color: Color(0xff205B48),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700
-                                    )
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ),
+                        Text('[대여종류] 상품이름', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700)),
+                        Padding(padding: EdgeInsets.all(2)),
+                        Text('옵션:' + ' ' + '자켓 L 바지 L', style: TextStyle(color: Colors.grey, fontSize: 14)),
                       ],
                     )
                   ],
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(16),
+            )
+          ),
+          SliverPadding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+            sliver: SliverToBoxAdapter(
+              child: Container(
                 width: double.infinity,
-                child: Text('대여기간 설정', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-              ),
-              Container(
-                child: InkWell(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                    width: double.infinity,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey[200],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text('대여기간 설정', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
-                        Text("yyyy.mm.dd - yyyy.mm.dd", style: TextStyle(fontSize: 16, color: Colors.grey))
-                      ],
-                    ),
+                child: Text('방문상담일 설정', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700))
+              )
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+            sliver: SliverToBoxAdapter(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        child: Text('날짜:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+                      ),
+                      Padding(padding: EdgeInsets.all(4)),
+                      Container(
+                        // width: double.infinity,
+                        width: 140,
+                        height: 40,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFFFFFFFF)
+                          ),
+                          child: Text('yy.mm.dd', style: TextStyle(color: Color(0xff205B48), fontSize: 18),),
+                          onPressed: () {
+                            DatePicker.showDatePicker(
+                              context,
+                              showTitleActions: true,
+                              minTime: DateTime(2022, 3, 2),
+                              maxTime: DateTime(2099, 12, 31),
+                              onChanged: (data) {print('change $data');},
+                              onConfirm: (data) {print('confirm $data');},
+                              currentTime: DateTime.now(),
+                              locale: LocaleType.ko,
+                              theme: DatePickerTheme(
+                                itemStyle: TextStyle(
+                                  color: Color(0xff205B48),
+                                  fontSize: 20
+                                ),
+                                doneStyle: TextStyle(
+                                  color: Color(0xff205B48),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700
+                                )
+                              ),
+                            );
+                          },
+                        )
+                      ),
+                    ],
                   ),
-                  onTap: () {
+                  Row(
+                    children: [
+                      Container(
+                        child: Text('시간:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+                      ),
+                      Padding(padding: EdgeInsets.all(4)),
+                      Container(
+                        // width: double.infinity,
+                        width: 140,
+                        height: 40,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFFFFFFFF)
+                          ),
+                          child: Text('tt:mm AM', style: TextStyle(color: Color(0xff205B48), fontSize: 18),),
+                          onPressed: () {
+                             DatePicker.showTime12hPicker(
+                              context,
+                              // showTitleActions: true,
+                              onChanged: (data) {print('change $data');},
+                              onConfirm: (data) {print('confirm $data');},
+                              // currentTime: DateTime(12, 00),
+                              locale: LocaleType.ko,
+                              theme: DatePickerTheme(
+                                itemStyle: TextStyle(
+                                  color: Color(0xff205B48),
+                                  fontSize: 20
+                                ),
+                                doneStyle: TextStyle(
+                                  color: Color(0xff205B48),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700
+                                )
+                              ),
+                            );
+                          },
+                        )
+                      ),
+                    ],
+                  ),
+                ],
+              )
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                width: double.infinity,
+                height: 2,
+                color: Colors.grey[200],
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                width: double.infinity,
+                child: Text('대여기간 설정', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700))
+              )
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                width: double.infinity,
+                height: 60,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFFFFFFF)
+                  ),
+                  child: Text('yy.mm.dd - yy.mm.dd', style: TextStyle(color: Color(0xff205B48), fontSize: 20),),
+                  onPressed: () {
                     showCalendarDatePicker2Dialog(
                       context: context,
                       config: CalendarDatePicker2WithActionButtonsConfig(
@@ -218,15 +233,14 @@ class _GoToBookState extends State<GoToBook> {
                       ),
                       dialogSize: const Size(325, 400),
                       // initialValue: _dialogCalendarPickerValue,
-                      borderRadius: BorderRadius.circular(15),
-                      
+                      borderRadius: BorderRadius.circular(8),
                     );
                   },
-                ),
+                )
               ),
-            ],
-          );
-        }
+            ),
+          )
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
@@ -246,5 +260,23 @@ class _GoToBookState extends State<GoToBook> {
         ),
       ),
     );
+    //   bottomNavigationBar: BottomAppBar(
+    //     color: Colors.white,
+    //     child: InkWell(
+    //       child: Container(
+    //         margin: EdgeInsets.all(8),
+    //         height: 56,
+    //         decoration: BoxDecoration(
+    //           borderRadius: BorderRadius.circular(8),
+    //           color: Color(0xff205B48),
+    //         ),
+    //         child: Center(child: Text('예약신청', style: TextStyle(color: Colors.white, fontSize: 16))),
+    //       ),
+    //       onTap: () {
+    //         Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBookComplete()));
+    //       },
+    //     ),
+    //   ),
+    // );
   }
 }
