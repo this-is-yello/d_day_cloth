@@ -15,6 +15,7 @@ import 'package:flutter_d_day_cloth/login/login.dart';
 import 'package:flutter_d_day_cloth/mypage/mypoint.dart';
 import 'package:flutter_d_day_cloth/booking/bookdetail.dart';
 import 'package:flutter_d_day_cloth/tabbarview/shoppingbag.dart';
+import 'package:flutter_d_day_cloth/booking/bookcomplete.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -29,7 +30,7 @@ void main() {
         showUnselectedLabels: true,
       ),
     ),
-    home: PromotionScreen(),
+    home: ClickBookComplete(),
     localizationsDelegates: [
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate

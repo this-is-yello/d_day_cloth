@@ -40,52 +40,61 @@ class Bookcomplete extends StatelessWidget {
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: ListView(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // AlertDialog(
-          //   title: Text('예약신청완료'),
-          //   content: Column(
-          //     children: [
-          //       Text('예약이 완료되었습니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-          //       Text('방문일자는' + ' ' + 'yyyy.mm.dd' + '입니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))
-          //     ],
-          //   ),
-          //   actions: [
-          //     TextButton(
-          //       child: Text('홈으로'),
-          //       onPressed: () {
-          //         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => WebMain()), (route) => false);
-          //       },
-          //     ),
-          //     TextButton(
-          //       child: Text('예약내역조회'),
-          //       onPressed: () {
-          //         Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBookDetail()));
-          //       },
-          //     ),
-          //   ],
-          // )
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: double.infinity,
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('예약이 완료되었습니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-                    Text('방문일자는' + ' ' + 'yyyy.mm.dd' + '입니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700))
-                  ],
+          Container(
+            width: double.infinity,
+            height: 180,
+            padding: EdgeInsets.all(16),
+            margin: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  blurRadius: 4,
+                  offset: Offset(0, 4),
                 )
-              )
-            ],
-          ),
-
+              ],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  child: Column(
+                    children: [
+                      Text('예약이 완료되었습니다.', style: TextStyle(fontSize: 18),),
+                      Text('방문일자는' + ' ' + 'yy.mm.dd' + '입니다.', style: TextStyle(fontSize: 18),)
+                    ]
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(16)),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        child: Text('홈으로', style: TextStyle(color: Color(0xFF205B48))),
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => WebMain()), (route) => false);
+                        },
+                      ),
+                      TextButton(
+                        child: Text('예약내역확인', style: TextStyle(color: Color(0xFF205B48))),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ClickBookHistory()));
+                        },
+                      ),
+                    ]
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
-      ),
+      )
     );
   }
 }

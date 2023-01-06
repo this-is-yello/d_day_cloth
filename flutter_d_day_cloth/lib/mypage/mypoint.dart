@@ -105,12 +105,12 @@ class MyPointScreen extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     padding: EdgeInsets.all(4),
-                    child: Text('* 유효기간이 만료되면 자동으로 사라집니다.', style: TextStyle(fontSize: 13))
+                    child: Text('※ 포인트 사용을 원하시면 직원에게 말씀해주세요', style: TextStyle(fontSize: 13))
                   ),
                   Container(
                     width: double.infinity,
                     padding: EdgeInsets.all(4),
-                    child: Text('* 유효기간이 만료되면 자동으로 사라집니다.', style: TextStyle(fontSize: 13))
+                    child: Text('※ 유효기간이 만료되면 자동으로 사라집니다.', style: TextStyle(fontSize: 13))
                   ),
                 ],
               )
